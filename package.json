@@ -2,19 +2,39 @@
   "name": "antoine",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsup src/index.ts --format cjs,esm",
+    "build": "tsup",
     "dev": "tsup --watch",
     "version": "changeset version",
     "release": "changeset publish"
   },
-  "keywords": [],
+  "keywords": [
+    "eslint",
+    "antoine",
+    "eslint",
+    "eslintconfig",
+    "eslint-config"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AntoineKM/antoine"
+  },
   "author": "Antoine Kingue <contact@antoinek.fr>",
   "license": "MIT",
+  "dependencies": {
+    "eslint-config-next": "13.3.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-turbo": "1.9.3",
+    "eslint-config-universe": "^11.2.0",
+    "eslint-plugin-react": "7.29.4"
+  },
+  "peerDependencies": {
+    "eslint": ">=6.6.0"
+  },
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
+    "@types/eslint": "^8.37.0",
     "tsup": "^6.6.3"
   }
 }
