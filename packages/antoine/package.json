@@ -14,7 +14,7 @@
     "dev": "tsup --watch"
   },
   "devDependencies": {
-    "@antoine/tsconfig": "workspace:*",
+    "antoine-tsconfig": "workspace:*",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
     "eslint": "^8.15.0",

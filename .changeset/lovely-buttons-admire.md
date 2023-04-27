@@ -1,5 +1,5 @@
 ---
-"@antoine/tsconfig": major
+"antoine-tsconfig": major
 "eslint-config-antoine": major
 "antoine": major
 ---
