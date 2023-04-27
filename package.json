@@ -1,40 +1,21 @@
 {
-  "name": "eslint-plugin-antoine",
-  "version": "2.0.0",
-  "description": "",
-  "main": "dist/index.js",
+  "private": true,
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
-    "version": "changeset version",
-    "release": "changeset publish"
-  },
-  "keywords": [
-    "eslint",
-    "antoine",
-    "eslint",
-    "eslintconfig",
-    "eslint-config"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/AntoineKM/antoine"
-  },
-  "author": "Antoine Kingue <contact@antoinek.fr>",
-  "license": "MIT",
-  "dependencies": {
-    "eslint-config-next": "13.3.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-config-turbo": "1.9.3",
-    "eslint-config-universe": "^11.2.0",
-    "eslint-plugin-react": "7.29.4"
-  },
-  "peerDependencies": {
-    "eslint": ">=6.6.0"
+    "build": "turbo run build",
+    "dev": "turbo run dev --no-cache --continue",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build && changeset publish"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.26.0",
-    "@types/eslint": "^8.37.0",
-    "tsup": "^6.6.3"
-  }
+    "@changesets/cli": "^2.25.2",
+    "eslint": "^8.29.0",
+    "eslint-config-antoine": "workspace:*",
+    "prettier": "^2.8.0",
+    "turbo": "latest"
+  },
+  "packageManager": "pnpm@7.15.0"
 }
