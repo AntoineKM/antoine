@@ -1,5 +1,5 @@
 {
-  "name": "antoine",
+  "name": "eslint-plugin-antoine",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
