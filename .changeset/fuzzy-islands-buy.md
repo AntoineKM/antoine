@@ -1,5 +1,5 @@
 ---
-"eslint-config-antoine": major
+"eslint-config-antoine": patch
 ---
 
 Add missing deps
