@@ -1,5 +1,11 @@
 # eslint-config-antoine
 
+## 1.0.3
+
+### Patch Changes
+
+- 84ce318: Add missing deps
+
 ## 1.0.2
 
 ### Patch Changes
