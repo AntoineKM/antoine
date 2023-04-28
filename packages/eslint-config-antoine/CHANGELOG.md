@@ -1,5 +1,11 @@
 # eslint-config-antoine
 
+## 1.0.2
+
+### Patch Changes
+
+- 62632a8: Add varsIgnorePattern to the no-unused-vars rule to ignore variables starting with an underscore in eslint-config-antoine
+
 ## 1.0.1
 
 ### Patch Changes
