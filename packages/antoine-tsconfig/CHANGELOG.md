@@ -1,5 +1,11 @@
 # antoine-tsconfig
 
+## 1.0.2
+
+### Patch Changes
+
+- 10e9e48: Add strict type checking and decorator metadata to antoine-tsconfig's node.json
+
 ## 1.0.1
 
 ### Patch Changes
