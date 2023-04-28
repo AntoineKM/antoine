@@ -11,7 +11,7 @@ const config: Linter.Config = {
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "universe/native"
+    "universe/native",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -31,14 +31,25 @@ const config: Linter.Config = {
     "no-console": 0,
     "no-control-regex": 0,
     "import/extensions": [0],
-    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false, "argsIgnorePattern": "^_" }],
-    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
+    "no-unused-vars": [
+      "error",
+      {
+        vars: "all",
+        args: "after-used",
+        ignoreRestSiblings: false,
+        argsIgnorePattern: "^_",
+      },
+    ],
+    "react/jsx-filename-extension": [1, { extensions: [".tsx", ".ts"] }],
     "react/jsx-props-no-spreading": [0],
     "react/react-in-jsx-scope": "off",
     "react/jsx-indent-props": ["error", 2],
-    "react/jsx-curly-brace-presence": ["error", { "props": "always", "children": "always" }],
-    "prettier/prettier": ["error", { "endOfLine": "auto" }]
-  }
-}
+    "react/jsx-curly-brace-presence": [
+      "error",
+      { props: "always", children: "always" },
+    ],
+    "prettier/prettier": ["error", { endOfLine: "auto" }],
+  },
+};
 
-export default config;
+module.exports = config;
