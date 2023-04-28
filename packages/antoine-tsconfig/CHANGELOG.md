@@ -1,5 +1,11 @@
 # antoine-tsconfig
 
+## 1.0.3
+
+### Patch Changes
+
+- 3fa32c7: Update compiler options in antoine-tsconfig/node.json to include additional libraries and enforce stricter rules
+
 ## 1.0.2
 
 ### Patch Changes
