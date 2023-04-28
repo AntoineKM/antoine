@@ -1,5 +1,11 @@
 # antoine-tsconfig
 
+## 1.0.4
+
+### Patch Changes
+
+- 2fe26fe: Remove `outDir` from node.json to prevent unnecessary file duplication
+
 ## 1.0.3
 
 ### Patch Changes
