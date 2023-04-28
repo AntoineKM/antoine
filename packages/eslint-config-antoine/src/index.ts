@@ -35,9 +35,10 @@ const config: Linter.Config = {
       "error",
       {
         vars: "all",
+        varsIgnorePattern: "^_",
         args: "after-used",
-        ignoreRestSiblings: false,
         argsIgnorePattern: "^_",
+        ignoreRestSiblings: false,
       },
     ],
     "react/jsx-filename-extension": [1, { extensions: [".tsx", ".ts"] }],
