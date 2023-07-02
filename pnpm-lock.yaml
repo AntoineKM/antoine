@@ -1,5 +1,9 @@
 lockfileVersion: 5.4
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 importers:
 
   .:
