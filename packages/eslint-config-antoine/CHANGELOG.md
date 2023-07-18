@@ -1,5 +1,11 @@
 # eslint-config-antoine
 
+## 1.0.4
+
+### Patch Changes
+
+- 8af6c38: Upgrade dependencies
+
 ## 1.0.3
 
 ### Patch Changes
