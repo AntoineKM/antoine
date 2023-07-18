@@ -1,5 +1,11 @@
 # eslint-config-antoine
 
+## 1.0.5
+
+### Patch Changes
+
+- dc7632f: Add ignore enums rule to eslint config
+
 ## 1.0.4
 
 ### Patch Changes
