@@ -39,7 +39,7 @@ const config: Linter.Config = {
         args: "after-used",
         argsIgnorePattern: "^_",
         ignoreRestSiblings: false,
-        ignoreEnums: "^[A-Z].*$",
+        ignoreEnums: true,
       },
     ],
     "react/jsx-filename-extension": [1, { extensions: [".tsx", ".ts"] }],
