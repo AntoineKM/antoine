@@ -1,5 +1,11 @@
 # eslint-config-antoine
 
+## 1.0.6
+
+### Patch Changes
+
+- 7fdf0b6: Fix ignore enums rule
+
 ## 1.0.5
 
 ### Patch Changes
