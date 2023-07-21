@@ -1,5 +1,11 @@
 # eslint-config-antoine
 
+## 1.0.7
+
+### Patch Changes
+
+- e01719d: Remove ignore enums from eslint config which cause errors
+
 ## 1.0.6
 
 ### Patch Changes
