@@ -1,5 +1,11 @@
 # eslint-config-antoine
 
+## 1.0.12
+
+### Patch Changes
+
+- e775776: Update ts no explicit any to warn instead of error
+
 ## 1.0.11
 
 ### Patch Changes
