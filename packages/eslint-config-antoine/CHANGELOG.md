@@ -1,5 +1,11 @@
 # eslint-config-antoine
 
+## 1.0.10
+
+### Patch Changes
+
+- 8392f42: Add comma dangle rule and revert prettier custom config
+
 ## 1.0.9
 
 ### Patch Changes
