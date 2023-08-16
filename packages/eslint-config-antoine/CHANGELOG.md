@@ -1,5 +1,11 @@
 # eslint-config-antoine
 
+## 1.0.8
+
+### Patch Changes
+
+- d8035ae: Upgrade dependencies
+
 ## 1.0.7
 
 ### Patch Changes
