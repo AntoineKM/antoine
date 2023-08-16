@@ -1,5 +1,11 @@
 # eslint-config-antoine
 
+## 1.0.9
+
+### Patch Changes
+
+- cc644d1: Remove eslint prettier custom config
+
 ## 1.0.8
 
 ### Patch Changes
