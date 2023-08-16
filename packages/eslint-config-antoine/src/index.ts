@@ -49,8 +49,10 @@ const config: Linter.Config = {
       "error",
       { props: "always", children: "always" },
     ],
-    "prettier/prettier": ["error", { endOfLine: "auto" }],
-    "comma-dangle": ["error", "always-multiline"],
+    "prettier/prettier": ["error", { 
+      endOfLine: "auto",
+      trailingComma: "all"
+    }],
   },
 };
 
