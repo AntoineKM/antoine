@@ -49,7 +49,6 @@ const config: Linter.Config = {
       "error",
       { props: "always", children: "always" },
     ],
-    "prettier/prettier": ["error", { endOfLine: "auto" }],
   },
 };
 
