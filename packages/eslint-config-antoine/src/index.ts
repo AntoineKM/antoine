@@ -53,6 +53,7 @@ const config: Linter.Config = {
       endOfLine: "auto",
       trailingComma: "all"
     }],
+    "@typescript-eslint/no-explicit-any": "warn",
   },
 };
 
