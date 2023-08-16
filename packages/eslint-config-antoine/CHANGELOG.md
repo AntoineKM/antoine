@@ -1,5 +1,11 @@
 # eslint-config-antoine
 
+## 1.0.13
+
+### Patch Changes
+
+- 21839ad: Update eslint config with ts no unused vars
+
 ## 1.0.12
 
 ### Patch Changes
