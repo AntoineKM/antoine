@@ -40,21 +40,24 @@ const config: Linter.Config = {
       "error",
       { props: "always", children: "always" },
     ],
-    "prettier/prettier": ["error", { 
-      endOfLine: "auto",
-      trailingComma: "all"
-    }],
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+        trailingComma: "all",
+      },
+    ],
     "@typescript-eslint/no-explicit-any": "warn",
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
-        "vars": "all",
-        "varsIgnorePattern": "^_",
-        "args": "after-used",
-        "argsIgnorePattern": "^_",
-        "ignoreRestSiblings": false
-      }
-    ],    
+        vars: "all",
+        varsIgnorePattern: "^_",
+        args: "after-used",
+        argsIgnorePattern: "^_",
+        ignoreRestSiblings: false,
+      },
+    ],
   },
 };
 
