@@ -1,5 +1,12 @@
 # antoine-tsconfig
 
+## 1.0.5
+
+### Patch Changes
+
+- abbbe41: Fix lint errors
+- abbbe41: Upgrade dependencies
+
 ## 1.0.4
 
 ### Patch Changes
