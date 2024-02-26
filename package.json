@@ -14,7 +14,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.25.2",
     "eslint": "^8.29.0",
-    "eslint-config-antoine": "latest",
+    "eslint-config-antoine": "workspace:^",
     "prettier": "^3.0.0",
     "turbo": "latest"
   },
