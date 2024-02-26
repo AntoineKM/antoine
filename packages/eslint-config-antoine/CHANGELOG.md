@@ -1,5 +1,12 @@
 # eslint-config-antoine
 
+## 1.0.14
+
+### Patch Changes
+
+- abbbe41: Fix lint errors
+- abbbe41: Upgrade dependencies
+
 ## 1.0.13
 
 ### Patch Changes
