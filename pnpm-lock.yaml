@@ -15,7 +15,7 @@ importers:
         specifier: ^8.29.0
         version: 8.44.0
       eslint-config-antoine:
-        specifier: workspace:*
+        specifier: latest
         version: link:packages/eslint-config-antoine
       prettier:
         specifier: ^3.0.0
