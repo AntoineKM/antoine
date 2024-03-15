@@ -23,7 +23,7 @@
     "eslint-config-turbo": "latest",
     "eslint-config-universe": "^12.0.0",
     "eslint-plugin-prettier": "^5.0.0",
-    "eslint-plugin-react": "7.33.2"
+    "eslint-plugin-react": "7.34.1"
   },
   "peerDependencies": {
     "eslint": ">=7.0.0",
