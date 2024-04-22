@@ -72,7 +72,7 @@ importers:
         version: 1.12.4(eslint@8.57.0)
       eslint-config-universe:
         specifier: ^12.0.0
-        version: 12.0.0(@types/eslint@8.56.4)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.3.3)
+        version: 12.0.1(@types/eslint@8.56.4)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.3.3)
       eslint-plugin-prettier:
         specifier: ^5.0.0
         version: 5.1.3(@types/eslint@8.56.4)(eslint-config-prettier@9.1.0)(eslint@8.57.0)(prettier@3.2.5)
@@ -853,7 +853,7 @@ packages:
       ignore: 5.3.1
       natural-compare: 1.4.0
       semver: 7.6.0
-      ts-api-utils: 1.2.1(typescript@5.3.3)
+      ts-api-utils: 1.3.0(typescript@5.3.3)
       typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
@@ -960,7 +960,7 @@ packages:
       '@typescript-eslint/utils': 6.21.0(eslint@8.57.0)(typescript@5.3.3)
       debug: 4.3.4
       eslint: 8.57.0
-      ts-api-utils: 1.2.1(typescript@5.3.3)
+      ts-api-utils: 1.3.0(typescript@5.3.3)
       typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
@@ -1939,8 +1939,8 @@ packages:
       eslint-plugin-turbo: 1.12.4(eslint@8.57.0)
     dev: false
 
-  /eslint-config-universe@12.0.0(@types/eslint@8.56.4)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.3.3):
-    resolution: {integrity: sha512-78UxGByheyDNL1RhszWYeDzWiBaUtLnFSeI20pJI89IXa9OAEZQHzG/iBFpMeaCs7Hqyg0wYJcuCbCx535wB7A==}
+  /eslint-config-universe@12.0.1(@types/eslint@8.56.4)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.3.3):
+    resolution: {integrity: sha512-Le9KOsPO5EhX9o/jUDhrsnYEpm0uo5/PmxOEZplKk59jmu0LD49Xt/97jCyfl1DVqiE5Ip0Y28xrRGnWZfeO9g==}
     peerDependencies:
       eslint: '>=8.10'
       prettier: '>=3'
@@ -4080,6 +4080,15 @@ packages:
 
   /ts-api-utils@1.2.1(typescript@5.3.3):
     resolution: {integrity: sha512-RIYA36cJn2WiH9Hy77hdF9r7oEwxAtB/TS9/S4Qd90Ap4z5FSiin5zEiTL44OII1Y3IIlEvxwxFUVgrHSZ/UpA==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      typescript: '>=4.2.0'
+    dependencies:
+      typescript: 5.3.3
+    dev: false
+
+  /ts-api-utils@1.3.0(typescript@5.3.3):
+    resolution: {integrity: sha512-UQMIo7pb8WRomKR1/+MFVLTroIvDVtMX3K6OUir8ynLyzB8Jeriont2bTAtmNPa1ekAgN7YPDyf6V+ygrdU+eQ==}
     engines: {node: '>=16'}
     peerDependencies:
       typescript: '>=4.2.0'
