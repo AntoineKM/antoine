@@ -27,7 +27,7 @@
   "devDependencies": {
     "@types/eslint": "^8.44.0",
     "@types/jest": "^29.5.11",
-    "@types/node": "^20.10.5",
+    "@types/node": "^22.0.0",
     "antoine-tsconfig": "workspace:*",
     "eslint": "^8.15.0",
     "eslint@9": "npm:eslint@^9.0.0",
