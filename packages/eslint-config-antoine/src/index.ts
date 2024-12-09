@@ -15,31 +15,38 @@ const config: Linter.Config = {
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
+    ecmaVersion: 2022,
+    sourceType: "module",
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 2022,
-    sourceType: "module",
   },
   plugins: ["react", "@typescript-eslint", "prettier"],
   settings: {
+    react: {
+      version: "detect",
+    },
     "import/ignore": ["react-native"],
   },
   rules: {
     semi: ["error", "always"],
     quotes: ["error", "double"],
-    "no-console": 0,
-    "no-control-regex": 0,
-    "import/extensions": [0],
-    "no-unused-vars": "off",
-    "react/jsx-filename-extension": [1, { extensions: [".tsx", ".ts"] }],
-    "react/jsx-props-no-spreading": [0],
+    "no-console": "off",
+    "no-control-regex": "off",
+    "import/extensions": "off",
+    "no-unused-vars": "off", // Turned off in favor of @typescript-eslint/no-unused-vars
+
+    // React rules
+    "react/jsx-filename-extension": ["warn", { extensions: [".tsx", ".ts"] }],
+    "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-indent-props": ["error", 2],
     "react/jsx-curly-brace-presence": [
       "error",
       { props: "always", children: "always" },
     ],
+
+    // Prettier rules
     "prettier/prettier": [
       "error",
       {
@@ -47,6 +54,8 @@ const config: Linter.Config = {
         trailingComma: "all",
       },
     ],
+
+    // TypeScript rules
     "@typescript-eslint/no-explicit-any": "warn",
     "@typescript-eslint/no-unused-vars": [
       "error",
@@ -58,6 +67,9 @@ const config: Linter.Config = {
         ignoreRestSiblings: false,
       },
     ],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-non-null-assertion": "warn",
   },
 };
 
