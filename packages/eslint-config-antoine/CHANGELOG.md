@@ -1,5 +1,14 @@
 # eslint-config-antoine
 
+## 1.1.0
+
+### Minor Changes
+
+- d52c1f7: Add support for ESLint v9 by:
+  - Use string literals for rule severity instead of numbers
+  - Add react.version setting
+  - Add test suite for v8/v9 compatibility
+
 ## 1.0.14
 
 ### Patch Changes
