@@ -1,5 +1,11 @@
 {
   "extends": "antoine-tsconfig/react.json",
   "include": ["."],
-  "exclude": ["dist", "build", "node_modules"]
+  "exclude": ["dist", "build", "node_modules"],
+  "compilerOptions": {
+    "moduleResolution": "node16",
+    "module": "NodeNext",
+    "outDir": "./dist",
+    "rootDir": "./src"
+  }
 }
