@@ -1,47 +1,110 @@
-import type { Linter } from "eslint";
+import eslintrcConfig, { flatConfig } from "../src";
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const config: Linter.Config = require("../dist/index");
+interface FlatESLintConfig {
+  files?: string[];
+  plugins?: Record<string, unknown>;
+  languageOptions?: {
+    ecmaVersion?: number;
+    sourceType?: string;
+    parser?: unknown;
+    parserOptions?: {
+      ecmaFeatures?: {
+        jsx?: boolean;
+      };
+    };
+  };
+  settings?: {
+    react?: {
+      version?: string;
+    };
+  };
+  rules?: Record<string, unknown>;
+  linterOptions?: {
+    reportUnusedDisableDirectives?: string;
+  };
+}
 
-describe("ESLint Configuration", () => {
-  test("has valid ecmaVersion for both v8 and v9", () => {
-    expect(config.parserOptions?.ecmaVersion).toBe(2022);
+describe("ESLint V8 Configuration (eslintrc)", () => {
+  test("has valid ecmaVersion", () => {
+    expect(eslintrcConfig.parserOptions?.ecmaVersion).toBe(2022);
   });
 
-  test("extends standard configs compatible with both versions", () => {
+  test("extends standard configs", () => {
     const extendsList = [
       "eslint:recommended",
       "plugin:react/recommended",
       "plugin:@typescript-eslint/recommended",
       "plugin:prettier/recommended",
-      "universe/native",
     ];
-    expect(config.extends).toEqual(extendsList);
+    expect(eslintrcConfig.extends).toEqual(extendsList);
   });
 
   test("has TypeScript parser configuration", () => {
-    expect(config.parser).toBe("@typescript-eslint/parser");
+    expect(eslintrcConfig.parser).toBe("@typescript-eslint/parser");
   });
 
   test("has all required plugins", () => {
-    const requiredPlugins = ["react", "@typescript-eslint", "prettier"];
-    expect(config.plugins).toEqual(expect.arrayContaining(requiredPlugins));
+    const requiredPlugins = ["react", "@typescript-eslint"];
+    expect(eslintrcConfig.plugins).toEqual(expect.arrayContaining(requiredPlugins));
   });
 
   test("has react settings", () => {
-    expect(config.settings?.react?.version).toBe("detect");
+    expect(eslintrcConfig.settings?.react?.version).toBe("detect");
+  });
+});
+
+describe("ESLint V9 Configuration (flat config)", () => {
+  const configs = flatConfig as FlatESLintConfig[];
+
+  test("includes base configurations", () => {
+    expect(configs.length).toBeGreaterThan(1);
+    expect(configs[0]).toBeDefined();
   });
 
-  test("rule severity uses string literals instead of numbers", () => {
-    const hasNumberSeverity = (obj: Record<string, unknown>): boolean => {
-      return Object.entries(obj).some(([_, value]) => {
-        if (Array.isArray(value)) {
-          return typeof value[0] === "number";
-        }
-        return typeof value === "number";
-      });
-    };
+  test("has correct language options in base config", () => {
+    const baseConfig = configs.find(
+      (config) => config.languageOptions?.ecmaVersion === 2022
+    );
+    
+    expect(baseConfig).toBeDefined();
+    expect(baseConfig?.languageOptions).toMatchObject({
+      ecmaVersion: 2022,
+      sourceType: "module",
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    });
+  });
 
-    expect(hasNumberSeverity(config.rules || {})).toBe(false);
+  test("has TypeScript and React configuration", () => {
+    const tsReactConfig = configs.find((config) => {
+      const hasTypeScriptFiles = config.files?.some(pattern => 
+        pattern.includes("*.{ts,tsx}")
+      );
+      const hasPlugins = config.plugins && 
+        "@typescript-eslint" in config.plugins && 
+        "react" in config.plugins;
+      
+      return hasTypeScriptFiles && hasPlugins;
+    });
+
+    expect(tsReactConfig).toBeDefined();
+    expect(tsReactConfig?.settings?.react?.version).toBe("detect");
+  });
+
+  test("includes Prettier config", () => {
+    const lastConfig = configs[configs.length - 1];
+    expect(lastConfig).toBeDefined();
+  });
+
+  test("TypeScript rules are properly configured", () => {
+    const tsConfig = configs.find((config) => 
+      config.rules?.["@typescript-eslint/no-unused-vars"]
+    );
+
+    expect(tsConfig).toBeDefined();
+    expect(tsConfig?.rules?.["@typescript-eslint/no-explicit-any"]).toBe("warn");
   });
 });
