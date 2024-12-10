@@ -1,5 +1,14 @@
 # eslint-config-antoine
 
+## 1.2.0
+
+### Minor Changes
+
+- 7045e64: Add support for ESLint v9 flat config:
+  - Add flat config export alongside eslintrc config
+  - Support direct plugin imports for better type checking
+  - Add TypeScript types for flat config
+
 ## 1.1.0
 
 ### Minor Changes
