@@ -1,4 +1,5 @@
-import eslintrcConfig, { flatConfig } from "../src";
+const config = require("../src");
+import { flat } from "../src";
 
 interface FlatESLintConfig {
   files?: string[];
@@ -26,7 +27,7 @@ interface FlatESLintConfig {
 
 describe("ESLint V8 Configuration (eslintrc)", () => {
   test("has valid ecmaVersion", () => {
-    expect(eslintrcConfig.parserOptions?.ecmaVersion).toBe(2022);
+    expect(config.parserOptions?.ecmaVersion).toBe(2022);
   });
 
   test("extends standard configs", () => {
@@ -36,25 +37,25 @@ describe("ESLint V8 Configuration (eslintrc)", () => {
       "plugin:@typescript-eslint/recommended",
       "plugin:prettier/recommended",
     ];
-    expect(eslintrcConfig.extends).toEqual(extendsList);
+    expect(config.extends).toEqual(extendsList);
   });
 
   test("has TypeScript parser configuration", () => {
-    expect(eslintrcConfig.parser).toBe("@typescript-eslint/parser");
+    expect(config.parser).toBe("@typescript-eslint/parser");
   });
 
   test("has all required plugins", () => {
     const requiredPlugins = ["react", "@typescript-eslint"];
-    expect(eslintrcConfig.plugins).toEqual(expect.arrayContaining(requiredPlugins));
+    expect(config.plugins).toEqual(expect.arrayContaining(requiredPlugins));
   });
 
   test("has react settings", () => {
-    expect(eslintrcConfig.settings?.react?.version).toBe("detect");
+    expect(config.settings?.react?.version).toBe("detect");
   });
 });
 
 describe("ESLint V9 Configuration (flat config)", () => {
-  const configs = flatConfig as FlatESLintConfig[];
+  const configs = flat as FlatESLintConfig[];
 
   test("includes base configurations", () => {
     expect(configs.length).toBeGreaterThan(1);

@@ -13,10 +13,10 @@ npm install --save-dev eslint typescript prettier eslint-config-antoine
 ### ESLint v9 (`eslint.config.js`)
 
 ```js
-import { flatConfig } from "eslint-config-antoine";
+import { flat } from "eslint-config-antoine";
 
 export default [
-  ...flatConfig,
+  ...flat,
   // Your additional rules here...
 ];
 ```
@@ -36,11 +36,3 @@ module.exports = {
 - 🎨 Prettier integration
 - ⚡️ Zero config setup
 - 🔄 Auto-detects React version
-
-## What's included
-
-- TypeScript support via `@typescript-eslint`
-- React rules and best practices
-- Prettier formatting rules
-- Modern JavaScript features (ES2022)
-- Browser and Node.js environments
