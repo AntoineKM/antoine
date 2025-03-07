@@ -18,6 +18,6 @@
     "prettier": "^3.0.0",
     "turbo": "latest"
   },
-  "packageManager": "pnpm@9.0.5",
+  "packageManager": "pnpm@10.6.1",
   "type": "module"
 }
