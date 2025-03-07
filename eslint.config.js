@@ -1,4 +1,4 @@
-import antoine from "eslint-config-antoine";
+import antoine from "./packages/eslint-config-antoine/dist/index.js";
 
 export default [
   ...antoine,
@@ -25,5 +25,5 @@ export default [
       "@typescript-eslint/no-unused-vars": "off",
       "react/jsx-curly-brace-presence": "off"
     }
-  },
+  }
 ];
