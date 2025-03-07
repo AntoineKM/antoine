@@ -1,5 +1,4 @@
-const config = require("../src");
-import { flat } from "../src";
+import config from "../src/index.js";
 
 interface FlatESLintConfig {
   files?: string[];
@@ -25,37 +24,8 @@ interface FlatESLintConfig {
   };
 }
 
-describe("ESLint V8 Configuration (eslintrc)", () => {
-  test("has valid ecmaVersion", () => {
-    expect(config.parserOptions?.ecmaVersion).toBe(2022);
-  });
-
-  test("extends standard configs", () => {
-    const extendsList = [
-      "eslint:recommended",
-      "plugin:react/recommended",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:prettier/recommended",
-    ];
-    expect(config.extends).toEqual(extendsList);
-  });
-
-  test("has TypeScript parser configuration", () => {
-    expect(config.parser).toBe("@typescript-eslint/parser");
-  });
-
-  test("has all required plugins", () => {
-    const requiredPlugins = ["react", "@typescript-eslint"];
-    expect(config.plugins).toEqual(expect.arrayContaining(requiredPlugins));
-  });
-
-  test("has react settings", () => {
-    expect(config.settings?.react?.version).toBe("detect");
-  });
-});
-
-describe("ESLint V9 Configuration (flat config)", () => {
-  const configs = flat as FlatESLintConfig[];
+describe("ESLint V9 Configuration", () => {
+  const configs = config as FlatESLintConfig[];
 
   test("includes base configurations", () => {
     expect(configs.length).toBeGreaterThan(1);
@@ -64,7 +34,7 @@ describe("ESLint V9 Configuration (flat config)", () => {
 
   test("has correct language options in base config", () => {
     const baseConfig = configs.find(
-      (config) => config.languageOptions?.ecmaVersion === 2022
+      (config: FlatESLintConfig) => config.languageOptions?.ecmaVersion === 2022
     );
     
     expect(baseConfig).toBeDefined();
@@ -80,8 +50,8 @@ describe("ESLint V9 Configuration (flat config)", () => {
   });
 
   test("has TypeScript and React configuration", () => {
-    const tsReactConfig = configs.find((config) => {
-      const hasTypeScriptFiles = config.files?.some(pattern => 
+    const tsReactConfig = configs.find((config: FlatESLintConfig) => {
+      const hasTypeScriptFiles = config.files?.some((pattern: string) => 
         pattern.includes("*.{ts,tsx}")
       );
       const hasPlugins = config.plugins && 
@@ -101,7 +71,7 @@ describe("ESLint V9 Configuration (flat config)", () => {
   });
 
   test("TypeScript rules are properly configured", () => {
-    const tsConfig = configs.find((config) => 
+    const tsConfig = configs.find((config: FlatESLintConfig) => 
       config.rules?.["@typescript-eslint/no-unused-vars"]
     );
 

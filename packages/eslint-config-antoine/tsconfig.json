@@ -3,9 +3,14 @@
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
-    "moduleResolution": "node16",
+    "moduleResolution": "NodeNext",
     "module": "NodeNext",
+    "target": "ES2022",
     "outDir": "./dist",
-    "rootDir": "./src"
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  },
+  "ts-node": {
+    "esm": true
   }
 }

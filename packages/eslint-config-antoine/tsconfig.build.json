@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["src"],
+  "exclude": ["dist", "build", "node_modules", "__tests__", "test-lint.js"],
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist"
+  }
+}
