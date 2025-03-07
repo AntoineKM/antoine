@@ -9,7 +9,7 @@ ESLint configurations for React/TypeScript projects using ESLint v9.
 ## Installation
 
 ```bash
-npm install --save-dev eslint prettier eslint-config-antoine
+npm install --save-dev eslint@latest prettier@latest eslint-config-antoine@latest
 ```
 
 ## Usage
