@@ -1,17 +1,15 @@
-// packages/eslint-config-antoine/src/index.ts
+import type { Linter as _Linter } from "eslint";
+
 import js from "@eslint/js";
 import globals from "globals";
-// Import eslint-config-prettier correctly for flat config
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 import reactPlugin from "eslint-plugin-react";
 import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import typescriptParser from "@typescript-eslint/parser";
 
-// Define FlatESLintConfig type for better type support
-import type { Linter } from "eslint";
-
 type FlatESLintConfig = {
   files?: string[];
+  ignores?: string[];
   plugins?: Record<string, unknown>;
   languageOptions?: {
     ecmaVersion?: number;
@@ -68,6 +66,7 @@ const config: FlatESLintConfig[] = [
       },
     },
     rules: {
+      "no-unused-vars": "off",
       "react/jsx-filename-extension": ["warn", { extensions: [".tsx", ".ts"] }],
       "react/jsx-props-no-spreading": "off",
       "react/react-in-jsx-scope": "off",
@@ -88,6 +87,15 @@ const config: FlatESLintConfig[] = [
         },
       ],
     },
+  },
+  // Ignore common directories and test files
+  {
+    ignores: [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/build/**",
+      "**/.turbo/**"
+    ]
   },
   // Prettier config should be last to override other style rules
   eslintConfigPrettier,
