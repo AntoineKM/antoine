@@ -1,5 +1,24 @@
 # eslint-config-antoine
 
+## 3.0.0
+
+### Major Changes
+
+- 38f7c80: Complete migration to ESLint v9:
+  - Drop support for ESLint v8 configurations
+  - Use flat config format exclusively
+  - Simplify imports and configuration
+  - Update dependencies to support ESLint v9
+  - Upgrade to eslint-config-prettier v10
+  - Improve type safety with direct plugin imports
+
+### Minor Changes
+
+- 7045e64: Add support for ESLint v9 flat config:
+  - Add flat config export alongside eslintrc config
+  - Support direct plugin imports for better type checking
+  - Add TypeScript types for flat config
+
 ## 1.1.0
 
 ### Minor Changes
